@@ -1,0 +1,29 @@
+<shared-navbar></shared-navbar>
+<shared-search-form
+    (onSearch)="getAllSlimes($event)"
+    (onSearchTerm)="getSlimesById($event)"
+>
+</shared-search-form>
+<div>
+    <ng-container #byTerm>
+
+        <card
+            *ngFor="let slime of slimesByTerm"
+            [id]="slime.id"
+            [name]="slime.name"
+            [image]="slime.image"
+        ></card>
+
+    </ng-container>
+
+    <div *ngIf="slimesByTerm.length === 0; byTerm">
+
+        <card
+            *ngFor="let slime of slimes"
+            [id]="slime.id"
+            [name]="slime.name"
+            [image]="slime.image"
+        ></card>
+
+    </div>
+</div>

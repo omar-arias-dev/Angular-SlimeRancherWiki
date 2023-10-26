@@ -1,0 +1,39 @@
+<ng-template #loading>
+    Waiting...
+</ng-template>
+
+<div *ngIf="slime; else loading">
+    <header>
+        <h1>{{ slime.name }}</h1>
+        <h2>Games:</h2>
+        <span *ngFor="let game of slime.games"
+        >
+            {{ game }}
+        </span>
+    </header>
+    <section>
+        <article>
+            <h3>Slimpedia</h3>
+            <div>
+                <h4>Slimeology</h4>
+                <p>{{ slime.slimepedia.slimeology }}</p>
+            </div>
+            <div>
+                <h4>Risks</h4>
+                <p>{{ slime.slimepedia.risks }}</p>
+            </div>
+            <div>
+                <h4>Plortonomics</h4>
+                <p>{{ slime.slimepedia.plortonomics }}</p>
+            </div>
+        </article>
+        <aside>
+            <figure>
+                <img [src]="slime.image" [alt]="slime.name">
+            </figure>
+            <span>Type: {{ slime.type }}</span>
+            <span>Favorite Toy: {{ slime.favouriteToy }}</span>
+            <span>Diet: {{ slime.diet }}</span>
+        </aside>
+    </section>
+</div>

@@ -1,0 +1,15 @@
+<div>
+    <button (click)="emitOnSearch()">Get all</button>
+
+    <form (ngSubmit)="emitOnSearchTerm()">
+
+        <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            name="searchTerm"
+            placeholder="Search"
+        >
+        <button type="submit">Search</button>
+
+    </form>
+</div>
